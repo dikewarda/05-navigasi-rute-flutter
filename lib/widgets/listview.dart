@@ -27,6 +27,7 @@ class MyListView extends StatelessWidget {
             name: item.name,
             price: item.price,
             weight: item.weight,
+            img: item.img,
           ),
         );
       },

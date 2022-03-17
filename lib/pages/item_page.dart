@@ -10,15 +10,22 @@ class ItemPage extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text("My List: " + itemArgs.name),
+          title: Text(itemArgs.name),
         ),
-        body: Center(
-            child: Text("Item Name: " +
-                itemArgs.name +
-                "\nItem Price: Rp. " +
-                itemArgs.price.toString() +
-                "\nItem Weight: " +
-                itemArgs.weight.toString() +
-                " ons")));
+        body: Container(
+          margin: const EdgeInsets.all(8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(child: Image.asset(itemArgs.img)),
+              Expanded(child: Text("Nama: " + itemArgs.name)),
+              Expanded(child: Text("Berat: " + itemArgs.weight)),
+              Expanded(
+                  child: Text(
+                "Harga: Rp " + itemArgs.price,
+              ))
+            ],
+          ),
+        ));
   }
 }
